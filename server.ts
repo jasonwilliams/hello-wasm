@@ -13,19 +13,19 @@ class ServerImpl {
 		this.instance = instance;
 	}
 
-	public static instantiate(): Promise<ServerImpl> {
-		return import('./dist/hello_wasm').then(mod => {
-            return new ServerImpl(mod);
-        }).catch(e => {
-            throw new Error(e);
-        });
+	public static async instantiate(): Promise<ServerImpl> {
+		try {
+			const mod = await import('./dist/hello_wasm');
+			return new ServerImpl(mod);
+		} catch (e) {
+			throw new Error(e);
+		}
 	}
 
 	public greeting(): String {
         return this.instance.greeting();
 	}
 }
-
 
 let impl: ServerImpl;
 let connection = createConnection(ProposedFeatures.all);

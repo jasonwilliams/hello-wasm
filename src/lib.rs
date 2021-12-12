@@ -8,5 +8,5 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
 pub fn greeting() -> String {
-    String::from("Hello world (from Rust)!")
+    String::from("Hello world (from Rust!)")
 }

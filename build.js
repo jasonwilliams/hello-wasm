@@ -1,6 +1,6 @@
 const production = process.argv[2] === "--production";
 const watch = process.argv[2] === "--watch";
-const { exec } = require("child_process");
+const wasmpack = require("esbuild-plugin-wasm-pack").wasmPack;
 
 require("esbuild")
   .build({
@@ -13,20 +13,17 @@ require("esbuild")
     minify: production,
     target: ["ES2020"],
     platform: "node",
+    plugins: [
+      wasmpack({
+        target: "nodejs",
+        outDir: "dist",
+      }),
+    ],
     watch: watch && {
       onRebuild(error) {
         if (error) console.error("watch build failed:", error);
         else {
-          exec("npm run compile:rust", (error, stdout, stderr) => {
-            if (error) {
-              console.error(`exec error: ${error}`);
-              return;
-            }
-            console.log(`stdout: ${stdout}`);
-            console.error(`stderr: ${stderr}`);
-          });
-
-          console.log("watch build succeeded");
+          console.log("build successful");
         }
       },
     },
