@@ -3,8 +3,10 @@
 This is an extension using Rust compiled down to WASM.
 
 - npm i
-- npm run compile
+- npm run watch
 - Launch Client
+
+Both Rust and JS files will be watched and rebuilt upon change. This template should be a good starting point to building a web assembly extension.
 
 ![](./docs/example.png)
 
