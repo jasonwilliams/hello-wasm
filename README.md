@@ -6,7 +6,7 @@ This is an extension using Rust compiled down to WASM.
 - npm run compile
 - Launch Client
 
-![](./docs/example.png)
+![](./docs/wasm-rust-demo-2.mp4)
 
 ## Useful Notes
 
