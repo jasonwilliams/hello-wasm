@@ -7,7 +7,8 @@ This is an extension using Rust compiled down to WASM.
 - Launch Client
 
 Both Rust and JS files will be watched and rebuilt upon change. This template should be a good starting point to building a web assembly extension.
-![](./docs/wasm-rust-demo-2.mp4)
+
+https://user-images.githubusercontent.com/936006/149666228-24bbcedc-3ad4-447d-9b07-7fcb21ad04b1.mp4
 
 ## Useful Notes
 
