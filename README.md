@@ -13,3 +13,7 @@ https://user-images.githubusercontent.com/936006/149666228-24bbcedc-3ad4-447d-9b
 ## Useful Notes
 
 - https://john-millikin.com/extending-vscode-with-webassembly
+
+If you're trying to build a web extension:
+
+- https://github.com/SonOfLilit/vscode-web-wasm-rust
